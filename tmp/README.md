@@ -1,11 +1,33 @@
-# RWAHS website
-A [Drupal Composer](https://travis-ci.org/drupal-composer/drupal-project) project containing the references to the individual components.
+# Composer template for Drupal projects
+
+[![Build Status](https://travis-ci.org/drupal-composer/drupal-project.svg?branch=8.x)](https://travis-ci.org/drupal-composer/drupal-project)
+
+This project template should provide a kickstart for managing your site
+dependencies with [Composer](https://getcomposer.org/).
+
+If you want to know how to use it as replacement for
+[Drush Make](https://github.com/drush-ops/drush/blob/master/docs/make.md) visit
+the [Documentation on drupal.org](https://www.drupal.org/node/2471553).
+
+## Usage
+
+First you need to [install composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx).
+
+> Note: The instructions below refer to the [global composer installation](https://getcomposer.org/doc/00-intro.md#globally).
+You might need to replace `composer` with `php composer.phar` (or similar) 
+for your setup.
+
+After that you can create the project:
+
+```
+composer create-project drupal-composer/drupal-project:8.x-dev some-dir --stability dev --no-interaction
+```
 
 With `composer require ...` you can download new dependencies to your 
 installation.
 
 ```
-cd <project root>
+cd some-dir
 composer require drupal/devel:8.*
 ```
 
@@ -48,8 +70,7 @@ Follow the steps below to update your core files.
 1. In the event that there are non-trivial conflicts in step 2, you may wish 
    to perform these steps on a branch, and use `git merge` to combine the 
    updated core files with your customized files. This facilitates the use 
-   of a [three-way merge tool such as kdiff3](http://www.gitshah.com/2010/12/how-to-setup-kdiff-as-diff-tool-for-git.html).
-   This setup is not necessary if your changes are simple; 
+   of a [three-way merge tool such as kdiff3](http://www.gitshah.com/2010/12/how-to-setup-kdiff-as-diff-tool-for-git.html). This setup is not necessary if your changes are simple; 
    keeping all of your modifications at the beginning or end of the file is a 
    good strategy to keep merges easy.
 
